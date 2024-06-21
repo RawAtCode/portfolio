@@ -1,0 +1,50 @@
+@import "/src/app.scss";
+
+.navbar {
+  height: 100px;
+
+  .wrapper {
+    max-width: 1366px;
+    margin: auto;
+    margin-left: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    color: white;
+    font-size: 20px;
+
+    @include mobile {
+      justify-content: flex-end;
+      padding: 20px;
+    }
+
+    .logo{
+      cursor: pointer;
+
+      &:hover {
+        color: orange;
+        transform: scale(1.2);
+      }
+    }
+
+    span {
+      font-weight: bold;
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    .social {
+      display: flex;
+      gap: 20px;
+      margin-right: 50px;
+
+      .hovered {
+        color: orange;
+        transform: scale(1.2);
+      }
+    }
+  }
+}
