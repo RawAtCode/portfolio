@@ -1,6 +1,5 @@
 import "./hero.scss";
 import { motion } from "framer-motion";
-import { FaAngleDoubleDown } from "react-icons/fa";
 
 const textVariants = {
   initial: {
@@ -84,7 +83,6 @@ const Hero = () => {
             src="/scroll.png"
             alt="scroll-img"
           />
-          {/* <FaAngleDoubleDown size={30} /> */}
         </motion.div>
       </div>
 

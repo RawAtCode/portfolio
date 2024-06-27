@@ -2,111 +2,55 @@ import { useRef } from "react";
 import "./about.scss";
 import { motion, useInView } from "framer-motion";
 
-const variants = {
+const textVariants = {
   initial: {
-    x: -500,
-    y: 100,
     opacity: 0,
+    y: 20,
   },
   animate: {
-    x: 0,
     opacity: 1,
     y: 0,
     transition: {
-      duration: 1,
-      staggerChildren: 0.1,
+      duration: 0.8,
+      staggerChildren: 0.3,
     },
   },
 };
 
 const About = () => {
   const ref = useRef();
-
-  const isInView = useInView(ref, { margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <motion.div
       className="about"
-      variants={variants}
       initial="initial"
-      // animate="animate"
-      // whileInView="animate"
+      animate={isInView ? "animate" : "initial"}
       ref={ref}
-      animate={"animate"}
     >
-      <motion.div className="textContainer" variants={variants}>
-        <p>
-          I focus on helping your brand grow
-          <br /> and move forward
-        </p>
-        <hr />
+      <motion.div className="about-header" variants={textVariants}>
+        <motion.h1 variants={textVariants}>About Me</motion.h1>
+        <motion.hr variants={textVariants} />
       </motion.div>
-      <motion.div className="titleContainer" variants={variants}>
-        <div className="title">
-          <img src="/people.webp" alt="" />
-          <h1>
-            <motion.b whileHover={{color:"orange"}}>Unique</motion.b> Ideas
-          </h1>
-        </div>
-        <div className="title">
-          <h1>
-            <motion.b whileHover={{color:"orange"}}>For Your</motion.b> Business.
-          </h1>
-          <button>WHAT WE DO?</button>
-        </div>
+
+      <motion.div className="about-content" variants={textVariants}>
+        <motion.p variants={textVariants}>
+          I am a dedicated and passionate web developer with a strong interest in data structures and algorithms. My journey in the tech world began with a fascination for how things work behind the scenes on the web, leading me to delve deep into the intricacies of web development.
+        </motion.p>
+        <motion.p variants={textVariants}>
+          I specialize in creating dynamic and responsive web applications that are both efficient and scalable. My technical expertise spans a broad range of modern web technologies, including HTML, CSS, JavaScript, React, and Next.js, among others. I am committed to continuous learning and keeping up-to-date with the latest trends and advancements in the web development field.
+        </motion.p>
       </motion.div>
-      <motion.div className="listContainer" variants={variants}>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>Branding</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            libero enim nisi aliquam consectetur expedita magni eius ex corrupti
-            animi! Ad nam pariatur assumenda quae mollitia libero repellat
-            explicabo maiores?
-          </p>
-          <button>Go</button>
-        </motion.div>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>Branding</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            libero enim nisi aliquam consectetur expedita magni eius ex corrupti
-            animi! Ad nam pariatur assumenda quae mollitia libero repellat
-            explicabo maiores?
-          </p>
-          <button>Go</button>
-        </motion.div>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>Branding</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            libero enim nisi aliquam consectetur expedita magni eius ex corrupti
-            animi! Ad nam pariatur assumenda quae mollitia libero repellat
-            explicabo maiores?
-          </p>
-          <button>Go</button>
-        </motion.div>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>Branding</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            libero enim nisi aliquam consectetur expedita magni eius ex corrupti
-            animi! Ad nam pariatur assumenda quae mollitia libero repellat
-            explicabo maiores?
-          </p>
-          <button>Go</button>
+
+      <motion.div className="about-techstack" variants={textVariants}>
+        <motion.h2 variants={textVariants}>Tech Stack</motion.h2>
+        <motion.hr variants={textVariants} />
+        <motion.div className="tech-list" variants={textVariants}>
+          {["HTML", "CSS / SCSS", "JavaScript", "React", "Next.js", "PHP", "C", "C++", "Java", "Python", "MySQL", "Firebase", "Git"].map((tech) => (
+            <motion.div className="tech" key={tech} variants={textVariants}>
+              <h3>{tech}</h3>
+            </motion.div>
+          ))}
         </motion.div>
       </motion.div>
     </motion.div>
