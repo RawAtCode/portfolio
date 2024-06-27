@@ -34,10 +34,10 @@ const About = () => {
       </motion.div>
 
       <motion.div className="about-content" variants={textVariants}>
-        <motion.p variants={textVariants}>
+        <motion.p className="about-one" variants={textVariants}>
           I am a dedicated and passionate web developer with a strong interest in data structures and algorithms. My journey in the tech world began with a fascination for how things work behind the scenes on the web, leading me to delve deep into the intricacies of web development.
         </motion.p>
-        <motion.p variants={textVariants}>
+        <motion.p className="about-two" variants={textVariants}>
           I specialize in creating dynamic and responsive web applications that are both efficient and scalable. My technical expertise spans a broad range of modern web technologies, including HTML, CSS, JavaScript, React, and Next.js, among others. I am committed to continuous learning and keeping up-to-date with the latest trends and advancements in the web development field.
         </motion.p>
       </motion.div>

@@ -15,6 +15,10 @@
       color: orange;
       font-size: 2rem;
       font-weight: 600;
+
+      @include mobile {
+        font-size: 1.7rem;
+      }
     }
 
     hr {
@@ -22,6 +26,10 @@
       border: none;
       border-top: 2px solid #fff;
       margin: 10px auto;
+
+      @include mobile {
+        width: 80%;
+      }
     }
   }
 
@@ -32,6 +40,16 @@
       font-size: 18px;
       line-height: 1.6;
       margin-bottom: 20px;
+
+      @include mobile {
+        font-size: 1rem;
+      }
+    }
+
+    .about-two{
+      @include mobile{
+        display: none;
+      }
     }
   }
 
@@ -43,13 +61,21 @@
       font-weight: 600;
       margin-bottom: 20px;
       color: orange;
+
+      @include mobile {
+        font-size: 1.4rem;
+      }
     }
-    
+
     hr {
       width: 600px;
       border: none;
       border-top: 2px solid #fff;
       margin: 10px auto;
+
+      @include mobile {
+        width: 20%;
+      }
     }
 
     .tech-list {
@@ -67,9 +93,13 @@
         text-align: center;
 
         h3 {
-          font-size: 18px;
+          font-size: 1rem;
           color: white;
           margin-bottom: 0;
+
+          @include mobile {
+            font-size: 0.6rem;
+          }
         }
 
         &:hover{
@@ -77,6 +107,23 @@
           color: white;
           cursor: pointer;
         }
+
+        @include mobile {
+          padding: 5px 8px;
+
+          h3 {
+            font-size: 0.6rem;
+          }
+        }
+      }
+
+      @include mobile {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100vw;
+        padding: .5rem;
+        margin: .5rem;
       }
     }
   }
