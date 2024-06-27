@@ -45,6 +45,10 @@
         color: orange;
         transform: scale(1.2);
       }
+
+      @include mobile {
+        margin: .1rem;
+      }
     }
   }
 }

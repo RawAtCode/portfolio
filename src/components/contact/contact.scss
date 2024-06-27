@@ -6,6 +6,7 @@
   margin: auto;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 50px;
 
   @include mobile {
@@ -49,6 +50,7 @@
   .formContainer {
     flex: 1;
     position: relative;
+    margin: 1rem;
 
     @include mobile {
       padding: 50px;
@@ -58,8 +60,12 @@
     .phoneSvg {
       stroke: orange;
       position: absolute;
-      margin: auto;
+      margin: 0 auto;
       z-index: -1;
+
+      @include mobile {
+        width: 80%;
+      }
     }
 
     form {
