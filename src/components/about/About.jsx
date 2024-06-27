@@ -46,7 +46,7 @@ const About = () => {
         <motion.h2 variants={textVariants}>Tech Stack</motion.h2>
         <motion.hr variants={textVariants} />
         <motion.div className="tech-list" variants={textVariants}>
-          {["HTML", "CSS / SCSS", "JavaScript", "React", "Next.js", "PHP", "C", "C++", "Java", "Python", "MySQL", "Firebase", "Git"].map((tech) => (
+          {["HTML", "CSS / SCSS", "JavaScript", "TypeScript", " BootStrap", "React", "Next.js", "PHP", "C", "C++", "Java", "Python", "MySQL", "Firebase", "Git"].map((tech) => (
             <motion.div className="tech" key={tech} variants={textVariants}>
               <h3>{tech}</h3>
             </motion.div>
