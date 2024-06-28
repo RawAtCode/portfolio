@@ -34,11 +34,11 @@ const About = () => {
       </motion.div>
 
       <motion.div className="about-content" variants={textVariants}>
+        <motion.div className="img-container">
+          <img src="https://images.pexels.com/photos/12812690/pexels-photo-12812690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="about-img" />
+        </motion.div>
         <motion.p className="about-one" variants={textVariants}>
-          I am a dedicated and passionate web developer with a strong interest in data structures and algorithms. My journey in the tech world began with a fascination for how things work behind the scenes on the web, leading me to delve deep into the intricacies of web development.
-        </motion.p>
-        <motion.p className="about-two" variants={textVariants}>
-          I specialize in creating dynamic and responsive web applications that are both efficient and scalable. My technical expertise spans a broad range of modern web technologies, including HTML, CSS, JavaScript, React, and Next.js, among others. I am committed to continuous learning and keeping up-to-date with the latest trends and advancements in the web development field.
+          Experienced Web Developer with a strong background in web development, data structures and algorithms, and database management. Holds a Master's in Computer Applications with Software Engineering as the specialization. Passionate about continuous learning and staying updated with the latest technologies.
         </motion.p>
       </motion.div>
 
@@ -46,11 +46,36 @@ const About = () => {
         <motion.h2 variants={textVariants}>Tech Stack</motion.h2>
         <motion.hr variants={textVariants} />
         <motion.div className="tech-list" variants={textVariants}>
-          {["HTML", "CSS / SCSS", "JavaScript", "TypeScript", " BootStrap", "React", "Next.js", "PHP", "C", "C++", "Java", "Python", "MySQL", "Firebase", "Git"].map((tech) => (
-            <motion.div className="tech" key={tech} variants={textVariants}>
-              <h3>{tech}</h3>
-            </motion.div>
-          ))}
+          <motion.div className="tech-card" variants={textVariants}>
+            <h3>Frontend</h3>
+            <div className="tech-items">
+              {["HTML", "CSS", "JavaScript", "TypeScript", "Bootstrap", "React", "Next.js"].map((tech) => (
+                <motion.div className="tech" key={tech} variants={textVariants}>
+                  <h3>{tech}</h3>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+          <motion.div className="tech-card" variants={textVariants}>
+            <h3>Backend</h3>
+            <div className="tech-items">
+              {["PHP", "Node.js", "Express.js", "MySQL", "Firebase"].map((tech) => (
+                <motion.div className="tech" key={tech} variants={textVariants}>
+                  <h3>{tech}</h3>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+          <motion.div className="tech-card" variants={textVariants}>
+            <h3>Others</h3>
+            <div className="tech-items">
+              {["C", "C++", "Java", "Python", "Git", "Vercel"].map((tech) => (
+                <motion.div className="tech" key={tech} variants={textVariants}>
+                  <h3>{tech}</h3>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </motion.div>
       </motion.div>
     </motion.div>
